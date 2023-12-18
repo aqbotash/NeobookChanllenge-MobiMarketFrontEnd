@@ -16,8 +16,6 @@ const ResponsiveContainer = ({ children, direction = 'column', responsive = true
 
       .box {
         flex: 1;
-        margin: 8px;
-        padding: 24px;
         position: relative;
       }
     `}</style>
