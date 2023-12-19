@@ -44,7 +44,7 @@ function login() {
         <div style={{position:'absolute', top:'60%', left:'50%', transform:'translate(-50%, -50%)', width:'50%'}}>
           <Input/>
           <InputWithIcon/>
-          <div style={{color: '#5458EA', fontSize: 14, fontFamily: 'Inter', fontWeight: '800', lineHeight: 4, wordWrap: 'break-word'}}>Забыли пароль</div>
+          <div style={{color: '#5458EA', fontSize: 14, fontFamily: 'Inter', fontWeight: '500', lineHeight: 4, wordWrap: 'break-word'}}>Забыли пароль</div>
           <Button/>
           <ButtonAsText/>
         </div>
