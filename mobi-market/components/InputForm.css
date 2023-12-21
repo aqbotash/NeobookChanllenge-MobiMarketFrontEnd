@@ -1,0 +1,44 @@
+.input-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    opacity: 0; /* Initially hide the label */
+    transition: opacity 0.3s ease-in-out;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: #C0C0C0;
+  }
+  
+  input {
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: #C0C0C0;
+  }
+    ::placeholder {
+    color: #999;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: #C0C0C0;
+  }
+
+  
+  /* Styles for the focused state */
+  .input-form.focused label {
+    opacity: 1; /* Show the label when focused */
+  }
+  
+  .input-form.focused input::placeholder {
+    visibility: hidden; /* Hide the placeholder when focused */
+  }
+  

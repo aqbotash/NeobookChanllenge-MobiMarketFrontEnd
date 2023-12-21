@@ -1,21 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
+import './InputForm.css'; // Import your CSS file
 
 function Input() {
-  const customField={
-    
-  }
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
   return (
         <div>
-          <div style={{width: '100%', height: '100%', paddingTop: 10, paddingBottom: 10, 
-          borderBottom: '0.50px #C0C0C0 solid', justifyContent: 'flex-start', alignItems: 'center', 
-          gap: 10, display: 'inline-flex', marginBottom:'24px'}}>
-              <label class="custom-field">
-                <input type="email"/>
-                <span class="placeholder">Имя пользователя</span>
-              </label>
-          </div>
+            <div className={`input-form ${isFocused ? 'focused' : ''}`}>
+                <label htmlFor="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" placeholder="Имя пользователя" onFocus={handleFocus}
+        onBlur={handleBlur} />
+            </div>
         </div>
   )
 }
 
 export default Input
+
+
