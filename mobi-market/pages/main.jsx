@@ -25,22 +25,33 @@ function main() {
       display:'flex', 
       alignItems:'center', 
       justifyContent:'center'
+    },
+    LayoutBox:{
+      paddingLeft:'100px',
+      paddingRight:'100px', 
+      paddingTop:'20px', 
+      backgroundColor:'#F0F0F0'
+    },
+    logoTypography:{
+      fontFamily:'Nunito', 
+      fontWeight:'800px', 
+      fontSize:'20px'
     }
   }
   return (
-    <div style={{paddingLeft:'100px', paddingRight:'100px', paddingTop:'20px', backgroundColor:'#F0F0F0'}}>
+    <div style={{...styles.LayoutBox}}>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', paddingBottom:'40px'}}>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <div style={{...styles.centeredBox}}>
                 <div>
                     <img src="/images/shopping-cart.svg" width="44px" height="44px"></img>
                 </div>
-                <div style={{fontFamily:'Nunito', fontWeight:'800px', fontSize:'20px', paddingLeft:'8px'}}>
+                <div style={{...styles.logoTypography, paddingLeft:'8px'}}>
                   MOBI MARKET
                 </div>
             </div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <div style={{...styles.centeredBox, flexDirection:'row'}}>
                 <div>
-                <div style={{ padding: 10, background: '#5458EA', borderRadius: 80, justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+                <div style={{ padding: 10, background: '#5458EA', borderRadius: 80, gap: 10, ...styles.centeredBox}}>
                   <div style={{color: 'white', fontSize: 16, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word'}}>Подать объявление</div>
                 </div>
                 </div>
