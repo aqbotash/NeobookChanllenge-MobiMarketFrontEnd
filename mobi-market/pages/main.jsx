@@ -2,7 +2,31 @@ import React from 'react'
 import { Grid, Box, Typography } from '@mui/material';
 import Image from 'next/image'
 
+
 function main() {
+  const styles={
+    paginationBox:{
+      height:'31px', 
+      width:'31px', 
+      borderRadius:'10px',
+      fontSize:'14px'
+    },
+    paginationBoxOn:{
+      backgroundColor:'#5458EA',
+      color:'#FFFFFF'
+    },
+    paginationBoxOff:{
+      backgroundColor:'#C0C0C0',
+    },
+    paginationArrowBox:{
+      border:'1px solid #5458EA'
+    },
+    centeredBox:{
+      display:'flex', 
+      alignItems:'center', 
+      justifyContent:'center'
+    }
+  }
   return (
     <div style={{paddingLeft:'100px', paddingRight:'100px', paddingTop:'20px', backgroundColor:'#F0F0F0'}}>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', paddingBottom:'40px'}}>
@@ -57,11 +81,11 @@ function main() {
       ))}
     </Grid>
         <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', gap:4, paddingTop:'40px', paddingBottom:'40px'}}>
-            <div style={{height:'31px', width:'31px', borderRadius:'10px', border:'1px solid #5458EA', display:'flex', alignItems:'center', justifyContent:'center'}}><img src="/images/arrow-left-blue.svg"></img></div>
-            <div style={{height:'32px', width:'32px', borderRadius:'10px', backgroundColor:'#C0C0C0',display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>1</div>
-            <div style={{height:'32px', width:'32px', borderRadius:'10px', backgroundColor:'#5458EA',display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px', color:'#FFFFFF'}}>2</div>
-            <div style={{height:'32px', width:'32px', borderRadius:'10px', backgroundColor:'#C0C0C0',display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>3</div>
-            <div style={{height:'31px', width:'31px', borderRadius:'10px', border:'1px solid #5458EA', display:'flex', alignItems:'center', justifyContent:'center'}}><img src="/images/arrow-right-blue.svg"></img></div>
+            <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationArrowBox}}><img src="/images/arrow-left-blue.svg"></img></div>
+            <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationBoxOff}}>1</div>
+            <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationBoxOn}}>2</div>
+            <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationBoxOff}}>3</div>
+            <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationArrowBox}}><img src="/images/arrow-right-blue.svg"></img></div>
         </div>
 
     </div>
