@@ -62,7 +62,7 @@ function main() {
                                 <div>youngccamel</div>
                             </div>
                         <div>
-                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#5458EA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#5458EA', ...centeredBox }}>
                                 <span>
                                     <img src='/images/user.svg'></img>
                                 </span>
@@ -74,7 +74,7 @@ function main() {
         </div>
         <Grid container spacing={2}>
       {Array.from({ length: 4 }, (_, row) => (
-        <Grid container item key={row} spacing={2} style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <Grid container item key={row} spacing={2} style={{...styles.centeredBox}}>
           {Array.from({ length: 8 }, (_, col) => (
             <Grid item key={col} xs={6} lg={1.5} sm={4} md={3}>
               {/* Your content for each grid item */}
@@ -91,7 +91,7 @@ function main() {
         </Grid>
       ))}
     </Grid>
-        <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', gap:4, paddingTop:'40px', paddingBottom:'40px'}}>
+        <div style={{flexDirection:'row', gap:4, paddingTop:'40px', paddingBottom:'40px',...styles.centeredBox}}>
             <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationArrowBox}}><img src="/images/arrow-left-blue.svg"></img></div>
             <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationBoxOff}}>1</div>
             <div style={{...styles.paginationBox,...styles.centeredBox,...styles.paginationBoxOn}}>2</div>
