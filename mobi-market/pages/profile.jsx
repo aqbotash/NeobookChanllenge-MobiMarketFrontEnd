@@ -8,7 +8,7 @@ function profile() {
         centeredBox:{
             display:'flex', 
             alignItems:'center', 
-            justifyContent:'center'
+            justifyContent:'center',
           }
     }
     const showToast = () => {
