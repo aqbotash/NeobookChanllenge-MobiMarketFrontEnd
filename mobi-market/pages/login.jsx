@@ -1,59 +1,37 @@
-import { Grid, Box, Typography } from '@mui/material';
-import Image from 'next/image'
-import Input from '../components/Input'
-import InputWithIcon from '../components/InputWithIcon'
-import Button from '../components/Button'
-import ButtonAsText from '../components/ButtonAsText'
-
+import {React, useState} from 'react'
+import axios from "axios"
 
 function login() {
-      const iconStyle = {
-        width: '30vw', // Adjust as needed
-        maxWidth: '30vw',
-        height: '30vh',
-        marginBottom: '10px', // Adjust spacing between icon and text
-      };
-      const typographyStyle = {
-        fontSize: '2vw', // Adjust as needed
-        marginBottom: '2vh',
-        fontFamily: 'Nunito',
-        fontWeight:800,
-      };
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const submit = async e =>{
+      e.preventDefault()
+      const {data} = await axios.post("users/login/",{
+        username, password
+      });
+      axios.defaults.headers.common['Authorization']=`bearer${data['token']}`
+    }
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={6} lg={6}>
-      <div style={{position: 'relative', width:'100%', height:'100vh'}}>
-        <img
-          src="/images/image1.png"
-          alt="Description of the image"
-          style={{ width: '100%', height: '100vh', objectFit: 'cover' }}
-        />
-        <div style={{position:'absolute', top: "46%", left:"49%", transform: 'translate(-50%, -50%)',
-         width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 14, display: 'flex'}}>
-            <img
-              src="/images/shopping-cart.svg"
-              alt="Shopping cart icon"
-              style={iconStyle}
-            />
-            <Typography variant="h1" style={typographyStyle}>MOBI MARKET</Typography>
+    <main className='from-signin'>
+      <form onSubmit={submit()}>
+
+        <div className="form-floating">
+          <input type="username" className="form-control" id="floatingInput" placeholder="llama" 
+          onChange={e=>setEmail(e.target.value)}/>
+          <label htmlFor="floatingInput"></label>
         </div>
-      </div>
-      </Grid>
-      <Grid item xs={12} sm={6} md={6} lg={6}>
-        <div style={{position:'relative', width:'100%', height:'100vh'}}>
-        <div style={{position:'absolute', top:'60%', left:'50%', transform:'translate(-50%, -50%)', width:'50%'}}>
-          <Input/>
-          <InputWithIcon/>
-          <div style={{color: '#5458EA', fontSize: 14, fontFamily: 'Inter', fontWeight: '500', lineHeight: 4, wordWrap: 'break-word'}}>Забыли пароль</div>
-          <Button/>
-          <ButtonAsText/>
+
+        <div className="form-floating">
+          <input type="password" className="form-control" id="floatingInput" placeholder="llama" 
+          onChange={e=>setPassword(e.target.value)}/>
+          <label htmlFor="floatingInput"></label>
         </div>
-        </div>
-      </Grid>
-    </Grid>
-  );
+      </form>
+
+    </main>
+  )
 }
-
-
 
 export default login
